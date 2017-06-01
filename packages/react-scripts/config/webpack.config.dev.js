@@ -239,6 +239,13 @@ module.exports = {
     ],
   },
   plugins: [
+    //suggestion from https://stackoverflow.com/a/34354301
+    new webpack.ProvidePlugin({
+      $: "jquery",
+      jQuery: "jquery",
+      'window.$': "jquery",
+      'window.jQuery': "jquery"
+    }),
     // Makes some environment variables available in index.html.
     // The public URL is available as %PUBLIC_URL% in index.html, e.g.:
     // <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
